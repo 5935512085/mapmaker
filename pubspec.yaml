@@ -1,0 +1,130 @@
+name: mapmaker
+description: A new Flutter application.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  path_provider: ^0.5.0
+  simple_permissions: ^0.1.6
+  image_picker_saver: ^0.1.0
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - images/oneblog/A-blu.png
+    - images/oneblog/A-grn.png
+    - images/oneblog/A-gry.png
+    - images/oneblog/A-org.png
+    - images/oneblog/B-blu.png
+    - images/oneblog/B-gry.png
+    - images/oneblog/B-org.png
+    - images/oneblog/G-rt.png
+    - images/oneblog/G-tr.png
+    - images/oneblog/G-tr3.png
+    - images/oneblog/H-grn.png
+    - images/oneblog/H-org.png
+    - images/oneblog/H-red.png
+    - images/QR/Qr-1.png
+    - images/QR/Qr2.png
+    - images/QR/Qr3.png
+    - images/QR/Qr4.png
+    - images/QR/Qr5.png
+    - images/QR/Qr6.png
+    - images/QR/Qr-7.png
+    - images/parblogs/2bd-bl.png
+    - images/parblogs/2bd-br.png
+    - images/parblogs/2bd-ml.png
+    - images/parblogs/2bd-mr.png
+    - images/parblogs/2bd-tl.png
+    - images/parblogs/2bd-tr.png
+    - images/parblogs/2bd-sc.png
+    - images/parblogs/a-h.png
+    - images/parblogs/2hh-ble.png
+    - images/parblogs/2hh-org.png
+    - images/parblogs/2hh-red.png
+    - images/parblogs/2hh-ble.png
+    - images/parblogs/2hv-brw.png
+    - images/parblogs/2hv-red.png
+    - images/parblogs/2hv-ble.png
+    - images/parblogs/R-gry.png
+    - images/parblogs/DH.png
+    - images/road/Rd-c.png
+    - images/road/Rd-h.png
+    - images/road/Rd-v.png
+    - images/road/Rd-ld.png
+    - images/road/Rd-rd.png
+    - images/road/Rd-lt.png
+    - images/road/Rd-rt.png
+    - images/road/Rdc-bl.png
+    - images/road/Rdc-br.png
+    - images/road/Rdc-tl.png
+    - images/road/Rdc-tr.png
+    - images/road/Rdi-l.png
+    - images/road/Rdi-d.png
+    - images/road/Rdi-r.png
+    - images/road/Rdi-t.png
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
