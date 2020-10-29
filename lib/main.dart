@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mapmaker/MakerCanvas/BulidingCv.dart';
 import 'package:mapmaker/MakerCanvas/newBDCV.dart';
-import 'MakerCanvas/Canvas2D1.dart';
 
 
 void main(){
@@ -10,12 +8,13 @@ void main(){
     home: new Homepage(),
     routes: <String, WidgetBuilder>{
       "/BasicArea": (BuildContext context) => new Building(),
-      "/Canvas2D1": (BuildContext context) => new Canvas2D1(),
+
     },
   ));
 }
 
 class Homepage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -50,16 +49,12 @@ class Homepage extends StatelessWidget {
                         textAlign: TextAlign.center,),
                       Row(mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text(" Buildings Scale : ",
-                            style: TextStyle(
-                                fontSize: 14,color: Colors.blueAccent),
-                            textAlign: TextAlign.center,),
                           RaisedButton.icon(
                             color: Colors.blueAccent,
                             textColor: Colors.white,
                             highlightColor: Colors.red,
                             icon:Icon(Icons.add_to_photos, color: Colors.white,),
-                            label:Text(" 187.50m X 206.25m ",style: TextStyle(fontSize: 14)),
+                            label:Text(" Start Design ",style: TextStyle(fontSize: 14)),
                             onPressed: (){
                               Navigator.of(context).pushNamed("/BasicArea");
                             },
@@ -69,18 +64,14 @@ class Homepage extends StatelessWidget {
                       ),
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(" Houses Scale : ",
-                        style: TextStyle(
-                            fontSize: 14,color: Colors.blueAccent),
-                        textAlign: TextAlign.center,),
                       RaisedButton.icon(
                         color: Colors.blueAccent,
                         textColor: Colors.white,
                         highlightColor: Colors.red,
-                        label: Text(" 92.50m X 101.75m ",style: TextStyle(fontSize: 14)),
-                        icon: Icon(Icons.add_to_photos, color: Colors.white,),
+                        label: Text(" Guidebook ",style: TextStyle(fontSize: 14)),
+                        icon: Icon(Icons.book, color: Colors.white,),
                         onPressed: (){
-                          Navigator.of(context).pushNamed("/Canvas2D1");
+                          Navigator.of(context).pushNamed("/");
                         },
                       ),
                     ],

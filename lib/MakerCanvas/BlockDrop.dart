@@ -5,8 +5,10 @@ class BlockDrop extends StatefulWidget{
 
   final double SizeH;
   final double SizeW;
+  final String auto_in;
+  final bool auto_set;
 
-  BlockDrop(this.SizeW,this.SizeH);
+  BlockDrop({this.SizeW,this.SizeH,this.auto_in,this.auto_set});
      @override
     _BlockDropState createState() => _BlockDropState();
 }
@@ -44,11 +46,13 @@ class _BlockDropState extends State<BlockDrop> {
   bool Acpt_2BdSc_gry = false;
   bool Acpt_2HVred =false, Acpt_2HHred =false;
   bool Acpt_DH =false;
+  ///////////// multi drop /////////
+  bool AcptMulti = false, waiting=false;
 
   @override
   Widget build(BuildContext context) {
     return new DragTarget(
-      builder: (context, List<String> data, rj){
+      builder: (context, List<String> data , rj){
 ///////////// oneblog //////////////////////////////////////////////////////////////////////
         return Acpt_Abl ? new SizedBox(height: widget.SizeH ,width: widget.SizeW,
             child: Image.asset("images/oneblog/A-blu.png",height: widget.SizeH ,width: widget.SizeW,) ) //Fix
@@ -158,10 +162,11 @@ class _BlockDropState extends State<BlockDrop> {
             child: Image.asset("images/road/Rdi-r.png",height: widget.SizeH ,width: widget.SizeW,) )
             :Acpt_Rdit ? new SizedBox(height: widget.SizeH ,width: widget.SizeW,
             child: Image.asset("images/road/Rdi-t.png",height: widget.SizeH ,width: widget.SizeW,) )
+            :AcptMulti ? new SizedBox(height: widget.SizeH ,width: widget.SizeW,
+            child: Container(decoration: BoXBorder(), child: Icon(Icons.add,color: Colors.red,size: 10.0,)))
 
             : data.isEmpty ? new SizedBox(height: widget.SizeH,width: widget.SizeW,
-                child: Container(decoration: BoXBorder(),
-                  child: Icon(Icons.add,color: Colors.blueGrey,size: 9.0,),))
+                child: Container(decoration: BoXBorder(), child: Icon(Icons.add,color: Colors.blueGrey,size: 9.0,),))
             : Opacity(opacity: 0.7,child:
               SizedBox(
                 child: Container(
@@ -170,7 +175,7 @@ class _BlockDropState extends State<BlockDrop> {
       },
       onAccept:(data){
         ///////////// one blog   ////////////////////////
-        if (data =='Abl'){
+        if (data =='Abl' || (widget.auto_in=='Abl'&& widget.auto_set==true)){
           setState(() {
             Acpt_Abl=true;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -199,7 +204,7 @@ class _BlockDropState extends State<BlockDrop> {
 
           });
         }
-        else if (data == 'Agr'){
+        else if (data == 'Agr'|| (widget.auto_in=='Agr'&& widget.auto_set==true)){
           setState(() {
             Acpt_Agr =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -228,7 +233,7 @@ class _BlockDropState extends State<BlockDrop> {
 
           });
         }
-        else if (data == 'Agy'){
+        else if (data == 'Agy'|| (widget.auto_in=='Agy'&& widget.auto_set==true)){
           setState(() {
             Acpt_Agy=true;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -256,7 +261,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Aor'){
+        else if (data == 'Aor'|| (widget.auto_in=='Aor'&& widget.auto_set==true)){
           setState(() {
             Acpt_Aor=true;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -284,7 +289,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Bbl'){
+        else if (data == 'Bbl'|| (widget.auto_in=='Bbl'&& widget.auto_set==true)){
           setState(() {
             Acpt_Bbl=true;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -312,7 +317,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Bgy'){
+        else if (data == 'Bgy'|| (widget.auto_in=='Bgy'&& widget.auto_set==true)){
           setState(() {
             Acpt_Bgy=true;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -340,7 +345,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Bor'){
+        else if (data == 'Bor'|| (widget.auto_in=='Bor'&& widget.auto_set==true)){
           setState(() {
             Acpt_Bor =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -368,7 +373,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Grt'){
+        else if (data == 'Grt'|| (widget.auto_in=='Grt'&& widget.auto_set==true)){
           setState(() {
             Acpt_Grt =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -396,7 +401,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Gtr'){
+        else if (data == 'Gtr'|| (widget.auto_in=='Gtr'&& widget.auto_set==true)){
           setState(() {
             Acpt_Gtr =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -424,7 +429,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Gtr3'){
+        else if (data == 'Gtr3'||(widget.auto_in=='Gtr3'&& widget.auto_set==true) ){
           setState(() {
             Acpt_Gtr3 =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -452,7 +457,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Gwt'){
+        else if (data == 'Gwt'|| (widget.auto_in=='Gwt'&& widget.auto_set==true)){
           setState(() {
             Acpt_Gwt =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -480,7 +485,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Hgr'){
+        else if (data == 'Hgr'|| (widget.auto_in=='Hgr'&& widget.auto_set==true)){
           setState(() {
             Acpt_Hgr =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -508,7 +513,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Hor'){
+        else if (data == 'Hor'|| (widget.auto_in=='Hor'&& widget.auto_set==true)){
           setState(() {
             Acpt_Hor =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -536,7 +541,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Hrd'){
+        else if (data == 'Hrd'|| (widget.auto_in=='Hrd'&& widget.auto_set==true)){
           setState(() {
             Acpt_Hrd =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -564,7 +569,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'sHbl'){
+        else if (data == 'sHbl'||(widget.auto_in=='sHbl'&& widget.auto_set==true) ){
           setState(() {
             Acpt_sHbl =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -592,7 +597,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'sHrd'){
+        else if (data == 'sHrd'|| (widget.auto_in=='sHrd'&& widget.auto_set==true)){
           setState(() {
             Acpt_sHrd =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -620,7 +625,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'sHyl'){
+        else if (data == 'sHyl'|| (widget.auto_in=='sHyl'&& widget.auto_set==true)){
           setState(() {
             Acpt_sHyl =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -648,7 +653,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'mHrd'){
+        else if (data == 'mHrd'|| (widget.auto_in=='mHrd'&& widget.auto_set==true)){
           setState(() {
             Acpt_mHrd =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -676,7 +681,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'uHbl'){
+        else if (data == 'uHbl'|| (widget.auto_in=='uHbl'&& widget.auto_set==true)){
           setState(() {
             Acpt_uHbl =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -706,7 +711,7 @@ class _BlockDropState extends State<BlockDrop> {
         }
 
 //////////  Case Code  ///////////////////
-        else if (data == 'Code1'){
+        else if (data == 'Code1'|| (widget.auto_in=='Code1'&& widget.auto_set==true)){
           setState(() {
             QRl =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -734,7 +739,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Code2'){
+        else if (data == 'Code2'|| (widget.auto_in=='Code2'&& widget.auto_set==true)){
           setState(() {
             QR2 =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -762,7 +767,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Code3'){
+        else if (data == 'Code3'|| (widget.auto_in=='Code3'&& widget.auto_set==true)){
           setState(() {
             QR3 =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -790,7 +795,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Code4'){
+        else if (data == 'Code4'|| (widget.auto_in=='Code4'&& widget.auto_set==true)){
           setState(() {
             QR4 =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -818,7 +823,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Code5'){
+        else if (data == 'Code5'|| (widget.auto_in=='Code5'&& widget.auto_set==true)){
           setState(() {
             QR5 =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -846,7 +851,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Code6'){
+        else if (data == 'Code6'|| (widget.auto_in=='Code6'&& widget.auto_set==true)){
           setState(() {
             QR6 =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -874,7 +879,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Code7'){
+        else if (data == 'Code7'|| (widget.auto_in=='Code7'&& widget.auto_set==true)){
           setState(() {
             QR7 =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -903,7 +908,7 @@ class _BlockDropState extends State<BlockDrop> {
           });
         }
         ////////////// case parblogs ////////
-        else if (data == '2Bbl_gry'){
+        else if (data == '2Bbl_gry'|| (widget.auto_in=='2Bbl_gry'&& widget.auto_set==true)){
           setState(() {
             Acpt_2Bbl_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -931,7 +936,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == '2Bbr_gry'){
+        else if (data == '2Bbr_gry'|| (widget.auto_in=='2Bbr_gry'&& widget.auto_set==true)){
           setState(() {
             Acpt_2Bbr_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -959,7 +964,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == '2Bml_gry'){
+        else if (data == '2Bml_gry'||(widget.auto_in=='2Bml_gry'&& widget.auto_set==true) ){
           setState(() {
             Acpt_2Bml_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -987,7 +992,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == '2Bmr_gry'){
+        else if (data == '2Bmr_gry'|| (widget.auto_in=='2Bmr_gry'&& widget.auto_set==true)){
           setState(() {
             Acpt_2Bmr_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1015,7 +1020,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == '2Btl_gry'){
+        else if (data == '2Btl_gry'|| (widget.auto_in=='2Btl_gry'&& widget.auto_set==true)){
           setState(() {
             Acpt_2Btl_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1043,7 +1048,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == '2Btr_gry'){
+        else if (data == '2Btr_gry'||(widget.auto_in=='2Btr_gry'&& widget.auto_set==true) ){
           setState(() {
             Acpt_2Btr_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1071,7 +1076,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'AHred'){
+        else if (data == 'AHred'|| (widget.auto_in=='AHred'&& widget.auto_set==true)){
           setState(() {
             Acpt_AHred =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1098,7 +1103,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'HVred'){
+        else if (data == 'HVred'|| (widget.auto_in=='HVred'&& widget.auto_set==true)){
           setState(() {
             Acpt_2HVred =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1126,7 +1131,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'HHred'){
+        else if (data == 'HHred'|| (widget.auto_in=='HHred'&& widget.auto_set==true)){
           setState(() {
             Acpt_2HHred =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1154,7 +1159,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'DH'){
+        else if (data == 'DH'|| (widget.auto_in=='DH'&& widget.auto_set==true)){
           setState(() {
             Acpt_DH =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1182,7 +1187,7 @@ class _BlockDropState extends State<BlockDrop> {
 
           });
         }
-        else if (data == '2BdSc_gry'){
+        else if (data == '2BdSc_gry'|| (widget.auto_in=='2BdSc_gry'&& widget.auto_set==true)){
           setState(() {
             Acpt_2BdSc_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1209,7 +1214,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == '2BdSc_gry'){
+        else if (data == '2BdSc_gry'|| (widget.auto_in=='2BdSc_gry'&& widget.auto_set==true)){
           setState(() {
             Acpt_2BdSc_gry =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1237,7 +1242,7 @@ class _BlockDropState extends State<BlockDrop> {
           });
         }
         //////Road ////////////////////
-        else if (data == 'Rdid'){
+        else if (data == 'Rdid'|| (widget.auto_in=='Rdid'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdid =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1265,7 +1270,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdil'){
+        else if (data == 'Rdil'|| (widget.auto_in=='Rdil'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdil =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1293,7 +1298,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdir'){
+        else if (data == 'Rdir'|| (widget.auto_in=='Rdir'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdir =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1321,7 +1326,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdit'){
+        else if (data == 'Rdit'|| (widget.auto_in=='Rdit'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdit =true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1349,7 +1354,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdc'){
+        else if (data == 'Rdc'|| (widget.auto_in=='Rdc'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdc=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1377,7 +1382,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdv'){
+        else if (data == 'Rdv'|| (widget.auto_in=='Rdv'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdv=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1405,7 +1410,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdh'){
+        else if (data == 'Rdh'|| (widget.auto_in=='Rdh'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdh=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1433,7 +1438,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdcbl'){
+        else if (data == 'Rdcbl'|| (widget.auto_in=='Rdcbl'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdcbl=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1461,7 +1466,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdcbr'){
+        else if (data == 'Rdcbr'|| (widget.auto_in=='Rdcbr'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdcbr=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1489,7 +1494,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdctl'){
+        else if (data == 'Rdctl'|| (widget.auto_in=='Rdctl'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdctl=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1517,7 +1522,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdctr'){
+        else if (data == 'Rdctr'|| (widget.auto_in=='Rdctr'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdctr=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1545,7 +1550,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdrd'){
+        else if (data == 'Rdrd'|| (widget.auto_in=='Rdrd'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdrd=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1573,7 +1578,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdrt'){
+        else if (data == 'Rdrt'|| (widget.auto_in=='Rdrt'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdrt=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1601,7 +1606,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdld'){
+        else if (data == 'Rdld'|| (widget.auto_in=='Rdld'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdld=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1629,7 +1634,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
-        else if (data == 'Rdlt'){
+        else if (data == 'Rdlt'|| (widget.auto_in=='Rdlt'&& widget.auto_set==true)){
           setState(() {
             Acpt_Rdlt=true ;
             ////////// Qr code case to drop ///////////////////////////////////
@@ -1657,6 +1662,7 @@ class _BlockDropState extends State<BlockDrop> {
             Acpt_DH =false;
           });
         }
+
       } ,
     );
   }

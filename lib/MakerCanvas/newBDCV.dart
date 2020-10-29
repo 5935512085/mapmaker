@@ -2,23 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:image_picker_saver/image_picker_saver.dart';
-import 'package:mapmaker/MakerCanvas/BasicArea.dart';
-import 'package:mapmaker/SubFucntion/DragBlist.dart';
-import 'package:mapmaker/SubFucntion/DragList.dart';
-import 'package:mapmaker/SubFucntion/IconObj3D.dart';
+import 'package:mapmaker/MakerCanvas/BlockDrop.dart';
+import 'package:mapmaker/SubFucntion/Categories.dart';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
-
-import 'package:mapmaker/SubFucntion/ListRoad.dart';
 import 'package:mapmaker/SubFucntion/colbd.dart';
 
-class Building extends StatefulWidget {
 
+class Building extends StatefulWidget {
   @override
   _BuildingState createState() => _BuildingState();
-
 }
+
 BoxDecoration Txborder(){
   return BoxDecoration(
       border: Border.all(
@@ -29,60 +26,231 @@ BoxDecoration Txborder(){
       color: Colors.blueAccent
   );
 }
-class _BuildingState extends State<Building> {
-  var ColA;
-  var RowA;
-  TextEditingController InputColA = new TextEditingController();
-  TextEditingController InputRowA = new TextEditingController();
+BoxDecoration Txborder3(){
+  return BoxDecoration(
+      border: Border.all(
+          width: 2,
+          color: Colors.blueAccent ),
+      borderRadius: BorderRadius.all(
+          Radius.circular((5.0))),
+      color: Colors.lightBlueAccent[50]
+  );
+}
 
-  GlobalKey  _screen = new GlobalKey();
-  void stateval(){
-    setState(() {
-      ColA = InputColA;
-      RowA = InputRowA;
+class _BuildingState extends State<Building> {
+
+  int getindex = 0;
+
+  createAlertDialogArea(BuildContext context){
+    return showDialog(context: context , builder: (context){
+      return AlertDialog(
+        title: Text("To determine the map area. Please Insert number of column and row."),
+        content:Column( mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Spacer(),
+            Container(
+              width: 120,height: 50,
+              child: TextField(
+                decoration: InputDecoration(hintText: "Row only 1-10"),
+                keyboardType: TextInputType.number,
+                controller: setRow,
+              ),
+            ),Spacer(),
+            Container(
+              width: 150,height: 50,
+              child: TextField(
+                decoration: InputDecoration(hintText: "Column only 1-12"),
+                keyboardType: TextInputType.number,
+                controller: setCol,
+              ),
+            ),Spacer(),
+          ],) ,
+        actions: <Widget>[
+          Container(height:35.0, width:100.0,
+            decoration: Txborder(),
+            child: FlatButton(onPressed: (){
+              Navigator.of(context).pop(
+                  setState(() {
+                initRow = int.parse(setRow.text);
+                initCol = int.parse(setCol.text);
+
+              }));},
+                child: Text(" OK ", style: TextStyle(color: Colors.white,),)),),
+        ],
+      );
     });
   }
+  createAlertDialogCategories(BuildContext context){
+    return showDialog(context: context , builder: (context){
+      return AlertDialog(
+        content:Column( mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Row( crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Center(child: Text("Top views 2D images")),
+                  Container(width: 90,height: 35,decoration: Txborder3() ,
+                    child: FlatButton.icon(
+                        onPressed: (){
+                          Navigator.of(context).pop(
+                              setState(() {
+                                getindex = 2;
+                              })
+                          );
+                        },
+                        icon: Icon(Icons.home,color: Colors.black,size: 10.0,),
+                        label: Text("House",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                  Container(width: 90,height: 35,decoration: Txborder3() ,
+                    child: FlatButton.icon(
+                        onPressed: (){
+                          Navigator.of(context).pop(
+                              setState(() {
+                                getindex = 1;
+                              })
+                          );
+                        },
+                        icon: Icon(Icons.location_city,color: Colors.black,size: 10.0,),
+                        label: Text("Building",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                  Container(width: 90,height: 35,decoration: Txborder3() ,
+                    child: FlatButton.icon(
+                        onPressed: (){
+                          Navigator.of(context).pop(
+                              setState(() {
+                                getindex = 4;
+                              })
+                          );
+                        },
+                        icon: Icon(Icons.blur_on,color: Colors.black,size: 10.0,),
+                        label: Text("Ground",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                ],
+              ),],),
+            Divider(),
+            Row(crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Center(child: Text("Images for showing 3D model")),
+                  Container(width: 90,height: 35,decoration: Txborder3() ,
+                      child: FlatButton.icon(
+                          onPressed: (){
+                            Navigator.of(context).pop(
+                                setState(() {
+                                  getindex = 3;
+                                })
+                            );
+                          },
+                          icon: Icon(Icons.swap_horiz,color: Colors.black,size: 10.0,),
+                          label: Text("Road",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                ],
+              ),],),
+
+
+          ]),
+
+      );
+    });
+
+  }
+
+  void AutoFill(bool toggle){
+  setState(() {
+    if(toggle){
+      describe ='autofill';
+      toggleVal = true;
+    }else {
+      toggleVal = false;
+      toggle =false;
+      describe ='Un-autofill';
+
+    }
+  });
+  }
+  String describe='autofill';
+  String defaultImg ='';
+  bool toggleVal=false;
+  var initRow=0;
+  var initCol=0;
+  final setRow = new TextEditingController();
+  final setCol = new TextEditingController();
+
+  GlobalKey  _screen = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return  new Scaffold(
-      body: Stack(
+      body: RepaintBoundary(
         key: _screen,
-        children: <Widget>[
-          new Container(
-            width: double.infinity,height: double.infinity,
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-//              Container(child: Row(
-//                children: <Widget>[
-//                  TextField(
-//                    controller: InputColA,
-//                    keyboardType: TextInputType.number,
-//                    decoration: new InputDecoration(hintText: "column"),
-//                  ),
-//                  TextField(
-//                    controller: InputRowA,
-//                    keyboardType: TextInputType.number,
-//                    decoration: new InputDecoration(hintText: "column"),
-//                  ),
-//                  RaisedButton(
-//                    child: Text(" Ok "),
-//                    onPressed: (){
-//                      stateval();
-//                      },)
-//
-//                        ],
-//                      ),),
-                  CRBlockDrop(5,5, 35.0, 35.0),
-
-
-                ],),
-            ),
-
-        ],
-      ),
-    );
+        child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(child:Text(" Area estimate: ${initRow*15}m X ${initCol*15}m ",
+                    style:TextStyle(color: Colors.black87,fontSize: 16)),),
+              Divider(),
+              Center(child:CRBlockDrop(colsize:initCol ,rowsize:initRow,MultiSt: toggleVal,ImgName:defaultImg ) ,),
+              Divider(),
+              Row(children: <Widget>[
+                Spacer(),
+                Column(children: <Widget>[
+                  Center(child: Container(height:35.0, width:102.0,
+                    decoration: Txborder(),
+                    child: FlatButton(onPressed: (){
+                      setState(() {
+                        createAlertDialogArea(context);
+                      });},
+                        child: Text("Set Area", style: TextStyle(color: Colors.white,),)),),),
+                  Center(child: Container(height:35.0, width:102.0,
+                    decoration: Txborder(),
+                    child: FlatButton(onPressed: (){
+                      setState(() {
+                        createAlertDialogCategories(context);
+                      });},
+                        child: Text("Categories", style: TextStyle(color: Colors.white,),)),),),],),Spacer(),
+                Column(children: <Widget>[
+                    Center(child: Column(children: <Widget>[
+                      Container(decoration: Txborder(),height: 35,width: 130,
+                        child: ButtonBar(alignment: MainAxisAlignment.start,
+                          buttonPadding:EdgeInsets.all(1), children: <Widget>[
+                          Row(children: <Widget>[
+                            new Switch(
+                              value: toggleVal,
+                              onChanged: (bool e) => AutoFill(e),
+                              activeColor: Colors.redAccent[400] ,),
+                            new Text(describe,style: TextStyle(color: Colors.white),),
+                          ],
+                        )
+                        ],),),
+                      Container(decoration: Txborder(),height: 35,width: 130,
+                        child: FlatButton.icon(
+                            onPressed:(){
+                              setState(() {
+                                _captureScreenshot(_screen);
+                              });
+                            }, icon: Icon(Icons.save_alt,color: Colors.white,),
+                            label: Text("Save",style: TextStyle(color: Colors.white)),),)]),)
+                    ],
+                  ),Spacer(),
+                Column(children: <Widget>[
+                  new Center(child: BlockDrop(SizeH: 70.0,SizeW: 70.0,auto_in: defaultImg,auto_set: toggleVal,),)
+                ],
+                ),Spacer(),]),
+              Divider(),
+              Categories(getindex: getindex, ),
+              ],),
+    ));
+  }
+  toggleButton(bool toggle){
+    setState(() {
+      toggleVal=!toggleVal;
+    });
+  }
+  _captureScreenshot(_screen) async{
+    RenderRepaintBoundary boundary = _screen.currentContext.findRenderObject();
+    ui.Image image = await boundary.toImage();
+    ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+    var filePath = await ImagePickerSaver.saveFile(
+        fileData: byteData.buffer.asUint8List());
+    print(filePath);
   }
 
 }
