@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mapmaker/MakerCanvas/MultiBlock.dart';
+import 'package:mapmaker/MakerCanvas/BlockDrop.dart';
 
 class RBlockDrop extends StatefulWidget{
 
@@ -39,7 +39,7 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,)],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,)],);
     }else if(widget.rowsize==2){
       if(widget.colsize>=6){
         setState(() {
@@ -55,8 +55,8 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }else if(widget.rowsize==3){
       if(widget.colsize>=6){
         setState(() {
@@ -72,9 +72,9 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }else if(widget.rowsize==4){
       if(widget.colsize>=8){
         setState(() {
@@ -90,10 +90,10 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,)],);
     }else if(widget.rowsize==5){
       if(widget.colsize>=8){
         setState(() {
@@ -109,11 +109,11 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }else if(widget.rowsize==6){
       if(widget.colsize>=8){
         setState(() {
@@ -129,12 +129,12 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }else if(widget.rowsize==7){
       if(widget.colsize>=8){
         setState(() {
@@ -150,13 +150,13 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }else if(widget.rowsize==8){
       setState(() {
         SizeW = 37.0;
@@ -165,14 +165,14 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }else if(widget.rowsize==9){
       setState(() {
         SizeW = 36.0;
@@ -181,15 +181,15 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }else if(widget.rowsize>=10){
       setState(() {
         SizeW = 35.0;
@@ -198,16 +198,16 @@ class _RBlockDropState extends State<RBlockDrop> {
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),
-          MultiBlockDrop(SizeH: SizeH,SizeW: SizeW,AcptMulti:widget.MultiSet ,nameImg:widget.ImgAcpt ,),],);
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),
+          BlockDrop(SizeH: SizeH,SizeW: SizeW, auto_set:widget.MultiSet ,auto_in: widget.ImgAcpt,),],);
     }
   }
 

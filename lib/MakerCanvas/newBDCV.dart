@@ -38,7 +38,6 @@ BoxDecoration Txborder3(){
 }
 
 class _BuildingState extends State<Building> {
-
   int getindex = 0;
 
   createAlertDialogArea(BuildContext context){
@@ -156,17 +155,18 @@ class _BuildingState extends State<Building> {
   void AutoFill(bool toggle){
   setState(() {
     if(toggle){
-      describe ='autofill';
+      describe ='Clickfill';
       toggleVal = true;
+      defaultImg = BlockDrop().TakeImg();
+
     }else {
       toggleVal = false;
       toggle =false;
-      describe ='Un-autofill';
-
+      describe ='Dragfill';
     }
   });
   }
-  String describe='autofill';
+  String describe='Dragfill';
   String defaultImg ='';
   bool toggleVal=false;
   var initRow=0;
@@ -181,62 +181,46 @@ class _BuildingState extends State<Building> {
     return  new Scaffold(
       body: RepaintBoundary(
         key: _screen,
-        child: new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(child:Text(" Area estimate: ${initRow*15}m X ${initCol*15}m ",
-                    style:TextStyle(color: Colors.black87,fontSize: 16)),),
-              Divider(),
-              Center(child:CRBlockDrop(colsize:initCol ,rowsize:initRow,MultiSt: toggleVal,ImgName:defaultImg ) ,),
-              Divider(),
-              Row(children: <Widget>[
-                Spacer(),
-                Column(children: <Widget>[
-                  Center(child: Container(height:35.0, width:102.0,
-                    decoration: Txborder(),
-                    child: FlatButton(onPressed: (){
-                      setState(() {
-                        createAlertDialogArea(context);
-                      });},
-                        child: Text("Set Area", style: TextStyle(color: Colors.white,),)),),),
-                  Center(child: Container(height:35.0, width:102.0,
-                    decoration: Txborder(),
-                    child: FlatButton(onPressed: (){
-                      setState(() {
-                        createAlertDialogCategories(context);
-                      });},
-                        child: Text("Categories", style: TextStyle(color: Colors.white,),)),),),],),Spacer(),
-                Column(children: <Widget>[
-                    Center(child: Column(children: <Widget>[
-                      Container(decoration: Txborder(),height: 35,width: 130,
-                        child: ButtonBar(alignment: MainAxisAlignment.start,
-                          buttonPadding:EdgeInsets.all(1), children: <Widget>[
-                          Row(children: <Widget>[
-                            new Switch(
-                              value: toggleVal,
-                              onChanged: (bool e) => AutoFill(e),
-                              activeColor: Colors.redAccent[400] ,),
-                            new Text(describe,style: TextStyle(color: Colors.white),),
-                          ],
-                        )
-                        ],),),
-                      Container(decoration: Txborder(),height: 35,width: 130,
-                        child: FlatButton.icon(
-                            onPressed:(){
-                              setState(() {
-                                _captureScreenshot(_screen);
-                              });
-                            }, icon: Icon(Icons.save_alt,color: Colors.white,),
-                            label: Text("Save",style: TextStyle(color: Colors.white)),),)]),)
-                    ],
-                  ),Spacer(),
-                Column(children: <Widget>[
-                  new Center(child: BlockDrop(SizeH: 70.0,SizeW: 70.0,auto_in: defaultImg,auto_set: toggleVal,),)
-                ],
-                ),Spacer(),]),
-              Divider(),
-              Categories(getindex: getindex, ),
-              ],),
+        child: ListView(
+          children: <Widget>[
+            Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Center(child:Text(" Area estimate: ${initRow*15}m X ${initCol*15}m ",
+                          style:TextStyle(color: Colors.black87,fontSize: 16)),),
+                    Divider(),
+                    Center(child: CRBlockDrop(ImgName: defaultImg,MultiSt: toggleVal,rowsize: initRow ,colsize: initCol,),),
+                    Divider(),
+                    Categories(getindex: getindex, ),
+                    Row(children: <Widget>[
+                      Spacer(),
+                        Center(child: Container(height:35.0, width:102.0,
+                          decoration: Txborder(),
+                          child: FlatButton(onPressed: (){
+                            setState(() {
+                              createAlertDialogArea(context);
+                            });},
+                              child: Text("Set Area", style: TextStyle(color: Colors.white,),)),),),Spacer(),
+                        Center(child: Container(height:35.0, width:102.0,
+                          decoration: Txborder(),
+                          child: FlatButton(onPressed: (){
+                            setState(() {
+                              createAlertDialogCategories(context);
+                            });},
+                              child: Text("Categories", style: TextStyle(color: Colors.white,),)),),),Spacer(),
+                        Center(child: Column(children: <Widget>[
+                          Container(decoration: Txborder(),height: 35,width: 100,
+                            child: FlatButton.icon(
+                              onPressed:(){
+                                setState(() {
+                                  _captureScreenshot(_screen);
+                                });
+                              }, icon: Icon(Icons.save_alt,color: Colors.white,),
+                              label: Text("Save",style: TextStyle(color: Colors.white)),),)]),),Spacer(),
+                    ]),
+                    ],),
+          ],
+        ),
     ));
   }
   toggleButton(bool toggle){
