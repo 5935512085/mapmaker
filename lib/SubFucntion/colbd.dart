@@ -144,9 +144,185 @@ class _CRBlockDropState extends State<CRBlockDrop> {
           new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
         ],
       );
-    }else if(widget.colsize>=12){
+    }else if(widget.colsize==12){
       return Column(
         children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }
+    else if(widget.colsize==13){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }
+    else if(widget.colsize==14){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }
+    else if(widget.colsize==15){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }
+    else if(widget.colsize==16){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }else if(widget.colsize>=17){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }else if(widget.colsize==18){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }else if(widget.colsize==19){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+        ],
+      );
+    }else if(widget.colsize>=20){
+      return Column(
+        children: <Widget>[
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
+          new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
           new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
           new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),
           new RBlockDrop(rowsize: widget.rowsize,colsize: widget.colsize ,ImgAcpt:widget.ImgName ,MultiSet:widget.MultiSt,),

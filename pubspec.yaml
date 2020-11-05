@@ -101,6 +101,7 @@ flutter:
     - images/road/Rdi-d.png
     - images/road/Rdi-r.png
     - images/road/Rdi-t.png
+    - images/icons/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
