@@ -177,7 +177,7 @@ class _BuildingState extends State<Building> {
             if(_angleComps>360){
               _angleComps = 0;
             }else if(_angleComps<=360){
-              _angleComps = _angleComps+0.392699082;
+              _angleComps = _angleComps+(0.392699082*4);
             }
           });
         },highlightColor: Colors.red,

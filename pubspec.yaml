@@ -76,6 +76,7 @@ flutter:
     - images/parblogs/2bd-tl.png
     - images/parblogs/2bd-tr.png
     - images/parblogs/2bd-sc.png
+    - images/parblogs/
     - images/parblogs/a-h.png
     - images/parblogs/2hh-ble.png
     - images/parblogs/2hh-org.png
@@ -102,6 +103,7 @@ flutter:
     - images/road/Rdi-r.png
     - images/road/Rdi-t.png
     - images/icons/
+    - images/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

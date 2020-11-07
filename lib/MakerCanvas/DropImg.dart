@@ -10,59 +10,73 @@ class getBoxImg extends StatefulWidget {
 }
 
 class _getBoxImgState extends State<getBoxImg> {
+  List<String>Folder =["images/road/",'images/oneblog/','images/parblogs/','images/QR/'];
 
-  List<String>Ground  = ["images/oneblog/A-blu.png", "images/oneblog/A-grn.png",
-    "images/oneblog/A-gry.png","images/oneblog/A-org.png"];
-  List<String>Building = ["images/oneblog/B-blu.png","images/oneblog/B-gry.png","images/oneblog/B-org.png",
-    "images/parblogs/2bd-bl.png","images/parblogs/2bd-br.png","images/parblogs/2bd-ml.png","images/parblogs/2bd-mr.png",
-    "images/parblogs/2bd-tl.png","images/parblogs/2bd-tr.png","images/parblogs/2bd-sc.png"];
-  List<String>Trees = ["images/oneblog/G-rt.png","images/oneblog/G-tr.png","images/oneblog/G-tr3.png"];
-  List<String>House = ["images/oneblog/H-grn.png","images/oneblog/H-org.png","images/oneblog/H-red.png"];
-  List<String>QR = ["images/QR/Qr-1.png","images/QR/Qr2.png","images/QR/Qr3.png","images/QR/Qr4.png",
-    "images/QR/Qr5.png","images/QR/Qr6.png","images/QR/Qr-7.png"];
-  List<String>Road = ["images/road/Rd-v.png","images/road/Rd-c.png","images/road/Rd-h.png","images/road/Rd-lt.png",
-    "images/road/Rd-ld.png","images/road/Rd-rt.png","images/road/Rd-rd.png","images/road/Rdc-bl.png",
-    "images/road/Rdc-br.png","images/road/Rdc-tl.png","images/road/Rdc-tr.png","images/road/Rdi-d.png","images/road/Rdi-l.png",
-    "images/road/Rdi-r.png","images/road/Rdi-t.png"];
+  List<String>Ground  = ["A-blu.png", "A-grn.png","A-gry.png","A-org.png"];
+  List<String>Building = ["B-blu.png","B-gry.png","B-org.png", "2.png","6.png","8.png","9.png", "2bd-tl.png","2bd-tr.png","2bd-sc.png"];
+  List<String>Trees = ["G-rt.png","G-tr.png","G-tr3.png"];
+  List<String>House = ["H-grn.png","H-org.png","H-red.png","2.png","6.png","8.png","9.png"];
+  List<String>QR = ["Qr-1.png","Qr2.png","Qr3.png","Qr4.png","Qr5.png","Qr6.png","Qr-7.png"];
+  List<String>Road = ["Rd-v.png","Rd-c.png","Rd-h.png","Rd-lt.png", "Rd-ld.png","Rd-rt.png","Rd-rd.png","Rdc-bl.png",
+    "Rdc-br.png","Rdc-tl.png","Rdc-tr.png","Rdi-d.png","Rdi-l.png", "Rdi-r.png","Rdi-t.png"];
+
+  String pathImg ;
+
 
   @override
   Widget build(BuildContext context) {
     if(widget.TypePic == 'Ground'){
+      setState(() {
+        pathImg = Folder.elementAt(1)+Ground.elementAt(widget.indexPic);
+      });
       return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
-          child: Image.asset(Ground.elementAt(widget.indexPic),height: widget.SizeH ,width: widget.SizeW,
+          child: Image.asset(pathImg,height: widget.SizeH ,width: widget.SizeW,
             filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
     }else if(widget.TypePic =='Building'){
-      return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
-          child: Image.asset(Building.elementAt(widget.indexPic),height: widget.SizeH ,width: widget.SizeW,
-            filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
+      if(widget.indexPic<=2){
+        setState(() {
+          pathImg = Folder.elementAt(1)+Building.elementAt(widget.indexPic);
+        });
+        return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
+            child: Image.asset(pathImg,height: widget.SizeH ,width: widget.SizeW,
+              filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
+      }else if(widget.indexPic>2){
+        setState(() {
+          pathImg = Folder.elementAt(2)+Building.elementAt(widget.indexPic);
+        });
+        return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
+            child: Image.asset(pathImg,height: widget.SizeH ,width: widget.SizeW,
+              filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
+      }
+
     }else if(widget.TypePic =='Trees') {
-      return new SizedBox(height: widget.SizeH, width: widget.SizeW,
-          child: Image.asset(
-            Trees.elementAt(widget.indexPic), height: widget.SizeH,
-            width: widget.SizeW,
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.fill,));
+      setState(() {
+        pathImg = Folder.elementAt(1)+Trees.elementAt(widget.indexPic);
+      });
+      return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
+          child: Image.asset(pathImg,height: widget.SizeH ,width: widget.SizeW,
+            filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
     }else if(widget.TypePic =='House') {
-      return new SizedBox(height: widget.SizeH, width: widget.SizeW,
-          child: Image.asset(
-            House.elementAt(widget.indexPic), height: widget.SizeH,
-            width: widget.SizeW,
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.fill,));
+      setState(() {
+        pathImg = Folder.elementAt(1)+House.elementAt(widget.indexPic);
+      });
+      return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
+          child: Image.asset(pathImg,height: widget.SizeH ,width: widget.SizeW,
+            filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
     }else if(widget.TypePic =='QR') {
-      return new SizedBox(height: widget.SizeH, width: widget.SizeW,
-          child: Image.asset(
-            QR.elementAt(widget.indexPic), height: widget.SizeH,
-            width: widget.SizeW,
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.fill,));
+      setState(() {
+        pathImg = Folder.elementAt(3)+QR.elementAt(widget.indexPic);
+      });
+      return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
+          child: Image.asset(pathImg,height: widget.SizeH ,width: widget.SizeW,
+            filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
     }else if(widget.TypePic =='Road') {
-      return new SizedBox(height: widget.SizeH, width: widget.SizeW,
-          child: Image.asset(
-            Road.elementAt(widget.indexPic), height: widget.SizeH,
-            width: widget.SizeW,
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.fill,));
+      setState(() {
+        pathImg = Folder.elementAt(0)+Road.elementAt(widget.indexPic);
+      });
+      return new SizedBox(height: widget.SizeH ,width: widget.SizeW,
+          child: Image.asset(pathImg,height: widget.SizeH ,width: widget.SizeW,
+            filterQuality: FilterQuality.high,fit: BoxFit.fill,) );
     }
   }
 }
