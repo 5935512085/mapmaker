@@ -192,13 +192,13 @@ class _BuildingState extends State<Building> {
   Widget build(BuildContext context) {
     return  new Scaffold(
       body: SizedBox(height: double.infinity ,width: double.infinity,
-                child: RepaintBoundary(
-                  key: _screen,
-                  child: ListView(
-                    addAutomaticKeepAlives: false,
-                    cacheExtent: 200.0,
-                    children: <Widget>[
-                      Column(
+                child: ListView(
+                  addAutomaticKeepAlives: false,
+                  cacheExtent: 200.0,
+                  children: <Widget>[
+                    RepaintBoundary(
+                      key: _screen,
+                      child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Row( crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
@@ -238,36 +238,36 @@ class _BuildingState extends State<Building> {
                                                 child: CRBlockDrop(ImgName: defaultImg,MultiSt: toggleVal,rowsize: initRow ,colsize: initCol,))),
                                       ],
                                     ))),]),
-                              Divider(),
-                              Categories(getindex: getindex, ),
-                              Row(children: <Widget>[
-                                Spacer(),
-                                  Center(child: Container(height:35.0, width:102.0,
-                                    decoration: Txborder(),
-                                    child: FlatButton(onPressed: (){
-                                      setState(() {
-                                        createAlertDialogArea(context);
-                                      });},
-                                        child: Text("Set Area", style: TextStyle(color: Colors.white,),)),),),Spacer(),
-                                  Center(child: Container(height:35.0, width:102.0,
-                                    decoration: Txborder(),
-                                    child: FlatButton(onPressed: (){
-                                      setState(() {
-                                        createAlertDialogCategories(context);
-                                      });},
-                                        child: Text("Categories", style: TextStyle(color: Colors.white,),)),),),Spacer(),
-                                  Center(child: Column(children: <Widget>[
-                                    Container(decoration: Txborder(),height: 35,width: 100,
-                                      child: FlatButton.icon(
-                                        onPressed:(){
-                                          setState(() {
-                                            _captureScreenshot(_screen);
-                                          });
-                                        }, icon: Icon(Icons.save_alt,color: Colors.white,),
-                                        label: Text("Save",style: TextStyle(color: Colors.white)),),)]),),Spacer(),
-                              ]),
-                              ],),
-                  ),
+                    ),
+                            Divider(),
+                            Categories(getindex: getindex, ),
+                            Row(children: <Widget>[
+                              Spacer(),
+                                Center(child: Container(height:35.0, width:102.0,
+                                  decoration: Txborder(),
+                                  child: FlatButton(onPressed: (){
+                                    setState(() {
+                                      createAlertDialogArea(context);
+                                    });},
+                                      child: Text("Set Area", style: TextStyle(color: Colors.white,),)),),),Spacer(),
+                                Center(child: Container(height:35.0, width:102.0,
+                                  decoration: Txborder(),
+                                  child: FlatButton(onPressed: (){
+                                    setState(() {
+                                      createAlertDialogCategories(context);
+                                    });},
+                                      child: Text("Categories", style: TextStyle(color: Colors.white,),)),),),Spacer(),
+                                Center(child: Column(children: <Widget>[
+                                  Container(decoration: Txborder(),height: 35,width: 100,
+                                    child: FlatButton.icon(
+                                      onPressed:(){
+                                        setState(() {
+                                          _captureScreenshot(_screen);
+                                        });
+                                      }, icon: Icon(Icons.save_alt,color: Colors.white,),
+                                      label: Text("Save",style: TextStyle(color: Colors.white)),),)]),),Spacer(),
+                            ]),
+                            ],),
       ),
       );
   }
