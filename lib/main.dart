@@ -18,16 +18,13 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(" Map Maker "),
-        backgroundColor: Colors.black45,),
       body: new Container( color: Colors.white,
         child: new Center(
           child: Wrap(children: [
             Center(
               child: Container( height: 200, width: 200,
                 child: SizedBox(width:200,height: 200,
-                    child: Image.asset("images/icons/Map Maker.png",)),
+                    child: Image.asset("images/icons/logo.png",fit: BoxFit.fill,)),
               ),
             ),
             Center(
@@ -52,10 +49,6 @@ class Homepage extends StatelessWidget {
                 color: Colors.blueGrey[20],
                 child: Column(
                   children: <Widget>[
-                    Text("  Choose scale area to design 2D/3D map ",
-                      style: TextStyle(
-                          fontSize: 16,color: Colors.black),
-                          textAlign: TextAlign.center,),
                         Row(mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             RaisedButton.icon(

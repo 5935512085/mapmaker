@@ -9,6 +9,7 @@ import 'package:mapmaker/SubFucntion/Categories.dart';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:mapmaker/SubFucntion/colbd.dart';
+import 'package:mapmaker/SubFucntion/rowbd.dart';
 import 'package:vector_math/vector_math_64.dart' as vector3;
 
 
@@ -186,6 +187,19 @@ class _BuildingState extends State<Building> {
       ),
     );
   }
+  Activedrop(String img){
+    if(img == null){
+      setState(() {
+        toggleVal = false;
+        return BlockDrop(SizeH: BlockDrop().SizeH,SizeW: BlockDrop().SizeW,auto_set:toggleVal ,auto_in: img,);
+      });
+    }if(img == BlockDrop().TakeImg()){
+      setState(() {
+        toggleVal = true;
+        return BlockDrop(SizeH: BlockDrop().SizeH,SizeW: BlockDrop().SizeW,auto_set:toggleVal ,auto_in: img,);
+      });
+    }
+  }
   
 
   @override
@@ -266,7 +280,11 @@ class _BuildingState extends State<Building> {
                                         });
                                       }, icon: Icon(Icons.save_alt,color: Colors.white,),
                                       label: Text("Save",style: TextStyle(color: Colors.white)),),)]),),Spacer(),
-                            ]),
+                            ]), 
+                    Row(children: <Widget>[
+                      Spacer(),
+                      Center(child: Activedrop(defaultImg),),Spacer(),
+                    ]),
                             ],),
       ),
       );

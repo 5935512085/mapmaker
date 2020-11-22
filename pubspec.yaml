@@ -49,62 +49,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/oneblog/A-blu.png
-    - images/oneblog/A-grn.png
-    - images/oneblog/A-gry.png
-    - images/oneblog/A-org.png
-    - images/oneblog/B-blu.png
-    - images/oneblog/B-gry.png
-    - images/oneblog/B-org.png
-    - images/oneblog/G-rt.png
-    - images/oneblog/G-tr.png
-    - images/oneblog/G-tr3.png
-    - images/oneblog/H-grn.png
-    - images/oneblog/H-org.png
-    - images/oneblog/H-red.png
-    - images/QR/Qr-1.png
-    - images/QR/Qr2.png
-    - images/QR/Qr3.png
-    - images/QR/Qr4.png
-    - images/QR/Qr5.png
-    - images/QR/Qr6.png
-    - images/QR/Qr-7.png
-    - images/parblogs/2bd-bl.png
-    - images/parblogs/2bd-br.png
-    - images/parblogs/2bd-ml.png
-    - images/parblogs/2bd-mr.png
-    - images/parblogs/2bd-tl.png
-    - images/parblogs/2bd-tr.png
-    - images/parblogs/2bd-sc.png
-    - images/parblogs/
-    - images/parblogs/a-h.png
-    - images/parblogs/2hh-ble.png
-    - images/parblogs/2hh-org.png
-    - images/parblogs/2hh-red.png
-    - images/parblogs/2hh-ble.png
-    - images/parblogs/2hv-brw.png
-    - images/parblogs/2hv-red.png
-    - images/parblogs/2hv-ble.png
-    - images/parblogs/R-gry.png
-    - images/parblogs/DH.png
-    - images/road/Rd-c.png
-    - images/road/Rd-h.png
-    - images/road/Rd-v.png
-    - images/road/Rd-ld.png
-    - images/road/Rd-rd.png
-    - images/road/Rd-lt.png
-    - images/road/Rd-rt.png
-    - images/road/Rdc-bl.png
-    - images/road/Rdc-br.png
-    - images/road/Rdc-tl.png
-    - images/road/Rdc-tr.png
-    - images/road/Rdi-l.png
-    - images/road/Rdi-d.png
-    - images/road/Rdi-r.png
-    - images/road/Rdi-t.png
+    - images/QR/
     - images/icons/
-    - images/icons/Map Maker.png
-
+    - images/building/
+    - images/combination/
+    - images/ground/
+    - images/houses/
+    - images/road/
+    - images/trees/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
