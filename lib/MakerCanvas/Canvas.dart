@@ -188,6 +188,17 @@ class _BuildingState extends State<Building> {
                             },
                             icon: Icon(Icons.filter_1,color: Colors.black,size: 10.0,),
                             label: Text("Building",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                    Container(width: 90,height: 35,decoration: Txborder3() ,
+                      child: FlatButton.icon(
+                          onPressed: (){
+                            Navigator.of(context).pop(
+                                setState(() {
+                                  getindex = 9;
+                                })
+                            );
+                          },
+                          icon: Icon(Icons.filter_1,color: Colors.redAccent,size: 10.0,),
+                          label: Text("Houses",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
                   ],
                 ),
               ),
