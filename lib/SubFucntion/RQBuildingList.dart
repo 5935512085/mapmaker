@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'DragObjects.dart';
 
-class IconObject3D extends StatefulWidget{
+class QRBuildingList extends StatefulWidget{
   final double sizeH,sizeW;
-  IconObject3D({this.sizeH,this.sizeW});
+  QRBuildingList ({this.sizeH,this.sizeW});
   @override
-  _IconObject3DState createState() => _IconObject3DState();
+  _QRBuildingListState createState() => _QRBuildingListState();
 }
-class _IconObject3DState extends State<IconObject3D>{
+class _QRBuildingListState extends State<QRBuildingList >{
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -19,19 +19,19 @@ class _IconObject3DState extends State<IconObject3D>{
           children: <Widget>[
             Text("   3D QR : ",style:TextStyle(color: Colors.blueGrey),),
             Spacer(),
-            DragObject(Dataname: "Code2",Marker: "images/parblogs/2bd-ml.png",
+            DragObject(Dataname: "QR1",Marker: "images/QR/Qr-1.png",
               sizeObjectH: widget.sizeH,sizeObjectW: widget.sizeW,), Spacer(),
-            DragObject(Dataname: "Code1",Marker: "images/parblogs/2bd-mr.png",
+            DragObject(Dataname: "QR2",Marker: "images/QR/Qr2.png",
               sizeObjectH: widget.sizeH,sizeObjectW: widget.sizeW,), Spacer(),
-            DragObject(Dataname: "Code3",Marker: "images/parblogs/2bd-tl.png",
+            DragObject(Dataname: "QR3",Marker: "images/QR/Qr3.png",
               sizeObjectH: widget.sizeH,sizeObjectW: widget.sizeW,), Spacer(),
-            DragObject(Dataname: "Code4",Marker: "images/parblogs/2bd-tr.png",
+            DragObject(Dataname: "QR4",Marker: "images/QR/Qr4.png",
               sizeObjectH: widget.sizeH,sizeObjectW: widget.sizeW,), Spacer(),
-            DragObject(Dataname: "Code5",Marker: "images/parblogs/2bd-bl.png",
+            DragObject(Dataname: "QR5",Marker: "images/QR/Qr5.png",
               sizeObjectH: widget.sizeH,sizeObjectW: widget.sizeW,), Spacer(),
-            DragObject(Dataname: "Code6",Marker: "images/parblogs/2bd-br.png",
+            DragObject(Dataname: "QR6",Marker: "images/QR/Qr6.png",
               sizeObjectH: widget.sizeH,sizeObjectW: widget.sizeW,), Spacer(),
-            DragObject(Dataname: "Code7",Marker: "images/parblogs/2bd-sc.png",
+            DragObject(Dataname: "QR7",Marker: "images/QR/Qr-7.png",
               sizeObjectH: widget.sizeH,sizeObjectW: widget.sizeW,), Spacer(),
           ],),
         Divider(),

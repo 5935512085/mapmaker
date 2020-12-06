@@ -9,8 +9,6 @@ import 'package:mapmaker/SubFucntion/Categories.dart';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:mapmaker/SubFucntion/colbd.dart';
-import 'package:mapmaker/SubFucntion/rowbd.dart';
-import 'package:vector_math/vector_math_64.dart' as vector3;
 
 
 class Building extends StatefulWidget {
@@ -106,7 +104,7 @@ class _BuildingState extends State<Building> {
                           onPressed: (){
                             Navigator.of(context).pop(
                                 setState(() {
-                                  getindex = 1;
+                                  getindex = 8;
                                 })
                             );
                           },
@@ -117,12 +115,58 @@ class _BuildingState extends State<Building> {
                           onPressed: (){
                             Navigator.of(context).pop(
                                 setState(() {
-                                  getindex = 4;
+                                  getindex = 3;
                                 })
                             );
                           },
                           icon: Icon(Icons.blur_on,color: Colors.black,size: 10.0,),
                           label: Text("Ground",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                    Container(width: 90,height: 35,decoration: Txborder3() ,
+                      child: FlatButton.icon(
+                          onPressed: (){
+                            Navigator.of(context).pop(
+                                setState(() {
+                                  getindex = 4;
+                                })
+                            );
+                          },
+                          icon: Icon(Icons.calendar_view_day,color: Colors.black,size: 10.0,),
+                          label: Text("Road",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                    Container(width: 90,height: 35,decoration: Txborder3() ,
+                      child: FlatButton.icon(
+                          onPressed: (){
+                            Navigator.of(context).pop(
+                                setState(() {
+                                  getindex = 5;
+                                })
+                            );
+                          },
+                          icon: Icon(Icons.terrain,color: Colors.green,size: 10.0,),
+                          label: Text("Trees",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                    Container(width: 110,height: 35,decoration: Txborder3() ,
+                      child: FlatButton.icon(
+                          onPressed: (){
+                            Navigator.of(context).pop(
+                                setState(() {
+                                  getindex = 6;
+                                })
+                            );
+                          },
+                          icon: Icon(Icons.library_add,color: Colors.red,size: 10.0,),
+                          label: Text("Co-House",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                    Container(width: 110,height: 35,decoration: Txborder3() ,
+                      child: FlatButton.icon(
+                          onPressed: (){
+                            Navigator.of(context).pop(
+                                setState(() {
+                                  getindex = 7;
+                                })
+                            );
+                          },
+                          icon: Icon(Icons.library_add,color: Colors.blueAccent,size: 10.0,),
+                          label: Text("Co-Building",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+
+
                   ],
                 ),
               ),
@@ -138,12 +182,12 @@ class _BuildingState extends State<Building> {
                             onPressed: (){
                               Navigator.of(context).pop(
                                   setState(() {
-                                    getindex = 3;
+                                    getindex = 1;
                                   })
                               );
                             },
-                            icon: Icon(Icons.swap_horiz,color: Colors.black,size: 10.0,),
-                            label: Text("Road",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
+                            icon: Icon(Icons.filter_1,color: Colors.black,size: 10.0,),
+                            label: Text("Building",style: TextStyle(color: Colors.black,fontSize: 10),)) ,),
                   ],
                 ),
               ),
@@ -224,34 +268,13 @@ class _BuildingState extends State<Building> {
                               ),
                               Divider(),
                               SizedBox(
-                                height: 440.0,width:1200.0,
-                                child: GestureDetector(
-                                    onScaleStart: (ScaleStartDetails details){
-                                      print(details);
-                                      _previousScale = _scale;
-                                      setState(() {});
-                                    },
-                                    onScaleEnd:(ScaleEndDetails details){
-                                      print(details);
-                                      _previousScale = 1.0;
-                                      setState(() {});
-                                    } ,
-                                    onScaleUpdate: (ScaleUpdateDetails details){
-                                      print(details);
-                                      _scale = _previousScale * details.scale;
-                                      setState(() {});
-                                    } ,
-                                    child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      textDirection: TextDirection.ltr,
-                                      children: <Widget>[
-                                        Padding(padding: EdgeInsets.zero,
-                                            child: Transform(
-                                                alignment: FractionalOffset.center,
-                                                transform: Matrix4.diagonal3(vector3.Vector3(_scale,_scale,_scale)),
-                                                child: CRBlockDrop(ImgName: defaultImg,MultiSt: toggleVal,rowsize: initRow ,colsize: initCol,))),
-                                      ],
-                                    ))),]),
+                                height: 450.0,width:800.0,
+                                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: <Widget>[
+                                    CRBlockDrop(ImgName: defaultImg,MultiSt: toggleVal,rowsize: initRow ,colsize: initCol,),
+                                  ],
+                                )),]),
                     ),
                             Divider(),
                             Categories(getindex: getindex, ),
@@ -281,10 +304,7 @@ class _BuildingState extends State<Building> {
                                       }, icon: Icon(Icons.save_alt,color: Colors.white,),
                                       label: Text("Save",style: TextStyle(color: Colors.white)),),)]),),Spacer(),
                             ]), 
-                    Row(children: <Widget>[
-                      Spacer(),
-                      Center(child: Activedrop(defaultImg),),Spacer(),
-                    ]),
+
                             ],),
       ),
       );

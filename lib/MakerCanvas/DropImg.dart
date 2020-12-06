@@ -14,14 +14,14 @@ class _getBoxImgState extends State<getBoxImg> {
     "images/combination/","images/ground/","images/houses/","images/trees/"];
 
   List<String>Ground  = ["AG1.png", "AG2.png","AG3.png","AG4.png"];
-  List<String>Building = ["BD1.png","BD2.png","BD3.png", "BD4.png","BD5.png","BD16.png"];
+  List<String>Building = ["BD1.png","BD2.png","BD3.png","BD4.png","BD5.png","BD6.png"];
   List<String>Trees = ["TR1.png","TR2.png","TR3.png","TR4.png"];
   List<String>House = ["HB1.png","HB2.png","HB3.png","HB4.png",
     "HR1.png","HR2.png","HR3.png","HR4.png",
     "HY1.png","HY2.png","HY3.png","HY4.png"];
-  List<String>Combine = ["HB1.png","HB2.png","HB3.png", "HR1.png","HR2.png","HR3.png", "HL1.png","HL2.png","HL3.png",
-    "HG1.png","HG2.png","HG3.png","HG4.png","BG1.png","BG2.png","BG3.png","BG4.png"];
-  List<String>QR = ["Qr-1.png","Qr2.png","Qr3.png","Qr4.png","Qr5.png","Qr6.png","Qr-7.png"];
+  List<String>Combine = ["BG1.png","BG2.png","BG3.png","BG4.png","BG5.png","BG6.png","BG7.png","HB1.png","HB2.png","HB3.png",
+    "HG1.png","HG2.png","HG3.png","HG4.png","HL1.png","HL2.png","HL3.png","HR1.png","HR2.png","HR3.png",];
+  List<String>QR = ["Qr2.png","Qr3.png","Qr4.png","Qr5.png","Qr6.png","Qr-1.png","Qr-7.png"];
   List<String>Road = ["RD1.png","RD2.png","RD3.png","RD4.png", "RD5.png","RD6.png","RD7.png","RD8.png","RD9.png","RD10.png"];
 
   String pathImg ;

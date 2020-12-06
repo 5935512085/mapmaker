@@ -28,7 +28,7 @@ class _RBlockDropState extends State<RBlockDrop> {
   bool multiR =false;
   @override
   Widget build(BuildContext context) {
-    if (widget.rowsize==null || widget.rowsize==null){
+    if (widget.rowsize==null || widget.colsize==null){
       return new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -197,8 +197,8 @@ class _RBlockDropState extends State<RBlockDrop> {
         });
       }else if(widget.colsize>14 && widget.colsize<=17){
         setState(() {
-          widget.SizeW = 25.0;
-          widget.SizeH = 25.0;
+          widget.SizeW = 24.0;
+          widget.SizeH = 24.0;
         });
       }else if(widget.colsize>17){
         setState(() {
@@ -228,8 +228,8 @@ class _RBlockDropState extends State<RBlockDrop> {
         });
       }else if(widget.colsize>14 && widget.colsize<=17){
         setState(() {
-          widget.SizeW = 25.0;
-          widget.SizeH = 25.0;
+          widget.SizeW = 24.0;
+          widget.SizeH = 24.0;
         });
       }else if(widget.colsize>17){
         setState(() {
@@ -262,8 +262,8 @@ class _RBlockDropState extends State<RBlockDrop> {
           });}
         else if(widget.colsize>14 && widget.colsize<=17){
           setState(() {
-            widget.SizeW = 25.0;
-            widget.SizeH = 25.0;
+            widget.SizeW = 24.0;
+            widget.SizeH = 24.0;
           });
         }else if(widget.colsize>17){
           setState(() {
@@ -296,8 +296,8 @@ class _RBlockDropState extends State<RBlockDrop> {
         });
       }else if(widget.colsize>14 && widget.colsize<=18){
         setState(() {
-          widget.SizeW = 25.0;
-          widget.SizeH = 25.0;
+          widget.SizeW = 24.0;
+          widget.SizeH = 24.0;
         });
       }else if(widget.colsize>18){
         setState(() {
@@ -330,8 +330,8 @@ class _RBlockDropState extends State<RBlockDrop> {
         });
       }else if(widget.colsize>14 && widget.colsize<=18){
         setState(() {
-          widget.SizeW = 25.0;
-          widget.SizeH = 25.0;
+          widget.SizeW = 24.0;
+          widget.SizeH = 24.0;
         });
       }else if(widget.colsize>18){
         setState(() {
